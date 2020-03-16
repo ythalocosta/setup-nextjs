@@ -1,0 +1,67 @@
+@mixin position ($position, $top: null, $right: null, $left: null, $bottom: null) {
+    position: $position;
+    top: $top;
+    right: $right;
+    left: $left;
+    bottom: $bottom;
+}
+
+@mixin absolute ($args...) {
+    @include position(absolute, $args...);
+}
+@mixin fixed ($args...) {
+    @include position(fixed, $args...);
+}
+@mixin relative ($args...) {
+    @include position(relative, $args...);
+}
+
+@mixin push--auto {
+    margin: {
+        left: auto;
+        right: auto;
+    }
+}
+
+@mixin input-placeholder {
+    &.placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &:-ms-input-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; }
+}
+
+$breakpoints: (
+    "phone-small":  380px,
+    "phone":        400px,
+    "phone-wide":   480px,
+    "phablet":      560px,
+    "tablet-small": 640px,
+    "tablet":       768px,
+    "tablet-large": 992px,
+    "tablet-wide":  1024px,
+    "desktop":      1280px,
+    "desktop-large":1366px,
+    "desktop-wide": 1440px,
+    "desktop-full": 1920px
+);
+@mixin mq($width, $type: min) {
+    @if map_has_key($breakpoints, $width) {
+        $width: map_get($breakpoints, $width);
+        @if $type == max {
+            $width: $width - 1px;
+        }
+        @media only screen and (#{$type}-width: $width) {
+            @content;
+        }
+    }
+}
+
+@mixin bg ($url: null) {
+    background: {
+        image: url($url);
+        repeat: no-repeat;
+        position: center;
+        size: cover;
+    }
+}
