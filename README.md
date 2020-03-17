@@ -43,6 +43,7 @@ Dependencies  | Link
 ------------- | -------------
 ReactJs  | [Click here](https://reactjs.org/)
 Bootstrap  | [Click here](https://getbootstrap.com/)
+Axios  | [Click here](https://github.com/axios/axios)
 
 ### Download manually
 
