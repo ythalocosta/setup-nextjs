@@ -41,8 +41,8 @@ Deploy the example using [ZEIT Now](https://zeit.co/now):
 
 Dependencies  | Link
 ------------- | -------------
-ReactJs  | [Clique aqui](https://reactjs.org/)
-Bootstrap  | [Clique aqui](https://getbootstrap.com/)
+ReactJs  | [Click here](https://reactjs.org/)
+Bootstrap  | [Click here](https://getbootstrap.com/)
 
 ### Download manually
 
