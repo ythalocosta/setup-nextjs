@@ -1,6 +1,6 @@
-# Example app with next-sass
+# Setup NextJs
 
-This example uses next-sass without css-modules. The config can be found in `next.config.js`, change `withSass()` to `withSass({cssModules: true})` if you use css-modules. Then in the code, you import the stylesheet as `import style from '../styles/style.scss'` and use it like `<div className={style.example}>`. [Learn more](https://github.com/zeit/next-plugins/tree/master/packages/next-sass).
+This example uses [NextJs](https://nextjs.org/), [create-next-app-cli](https://create-next-app.github.io/) and [ZEIT Now](https://zeit.co/home) as the contribution base.
 
 ## Deploy your own
 
@@ -10,23 +10,47 @@ Deploy the example using [ZEIT Now](https://zeit.co/now):
 
 ## How to use
 
-### Using `create-next-app`
-
-Execute [`create-next-app`](https://github.com/zeit/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
-
-```bash
-npm init next-app --example with-next-sass with-next-sass-app
-# or
-yarn create next-app --example with-next-sass with-next-sass-app
+### Architecture
 ```
+├── assets
+│   ├── fonts
+│   └── scss
+│       ├── _variables.scss
+│       ├── fonts.scss
+│       ├── general.scss
+│       ├── mixins.scss
+│       └── style.scss
+├── components
+│   ├── Footer
+│   │   ├── index.js
+│   │   └── style.scss
+│   ├── Header
+│   │   ├── index.js
+│   │   └── style.scss
+│   └── Layout
+│       └── index.js
+├── pages
+│   ├── 404.js
+│   ├── index.js
+│   └── single.js
+└── public
+    └── images
+        └── favicon.ico
+
+```
+
+Dependencies  | Link
+------------- | -------------
+ReactJs  | [Clique aqui](https://reactjs.org/)
+Bootstrap  | [Clique aqui](https://getbootstrap.com/)
 
 ### Download manually
 
 Download the example:
 
 ```bash
-curl https://codeload.github.com/zeit/next.js/tar.gz/canary | tar -xz --strip=2 next.js-canary/examples/with-next-sass
-cd with-next-sass
+git clone https://github.com/ythalocosta/nextjs-boilerplate.git NAME_PROJECT
+cd NAME_PROJECT
 ```
 
 Install it and run:
@@ -42,10 +66,10 @@ yarn dev
 Run production build with:
 
 ```bash
-npm run build
+npm run build_export
 npm run start
 # or
-yarn build
+yarn build_export
 yarn start
 ```
 
